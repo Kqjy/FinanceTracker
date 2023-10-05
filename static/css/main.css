@@ -188,6 +188,28 @@ html, body {
     text-align: center;
 }
 
+.docsdiv {
+    display: grid;
+    grid-template-columns: repeat(2 , 2fr);
+    gap: 2rem;
+}
+
+.docslink {
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+}
+
+#settingssave {
+    font-family: inherit;
+    display: inline-block;
+    padding: 4px;
+    background-color: bisque;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
 @media (max-width: 700px) {
     #sidepanel {
         position: absolute;
@@ -208,4 +230,7 @@ html, body {
     .settingspanel input, .settingspanel select {
         width: 90%;
     }
+    .docsdiv {
+        grid-template-columns: repeat(1 , 100%);
+    } 
 }

@@ -29,7 +29,7 @@ async function load_dashboard() {
     }
     document.getElementById('currencysymbol').textContent = settingsdata['items'][0]['currency'];
     document.getElementById('displayname').textContent = settingsdata['items'][0]['username'];
-    var balance = incomevalue - expensevalue + savingsvalue;
+    var balance = incomevalue - expensevalue - savingsvalue;
     document.getElementById('totalvalue').textContent = parseFloat(balance.toFixed(2)).toLocaleString('en');
     var mergeddata = []
     var mergeddata = mergeddata.concat(incomedata['items']).concat(expensedata['items']).concat(savingsdata['items']);
@@ -40,14 +40,21 @@ async function load_dashboard() {
         var div = document.createElement('div');
         div.setAttribute('id', "thoverall" + mergeddata[x]['key']);
         div.setAttribute('class', 'transactiondiv ' + 'transaction' + mergeddata[x]['type']);
+        var date = mergeddata[x]['timestamp'].slice(0, 10).replace(",", " ").replace(" ", "");
         var title = document.createElement('p');
         title.setAttribute('class', 'transactiontitle');
-        title.textContent = mergeddata[x]['type'];
+        title.textContent = "[" + date + "] " + mergeddata[x]['type'];
         var category = document.createElement('span');
         category.textContent = ": " + mergeddata[x]['category'];
+        if (mergeddata[x]['type'] === "Income") {
+            var plusorminus = "+";
+        }
+        else {
+            var plusorminus = "-";
+        }
         var value = document.createElement('p');
         value.setAttribute('class', 'transactionvalue');
-        value.textContent = settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
+        value.textContent = plusorminus + settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
         var note = document.createElement('p');
         note.setAttribute('class', 'transactionnote');
         note.textContent = mergeddata[x]['note'];
@@ -82,14 +89,16 @@ async function load_income() {
         var div = document.createElement('div');
         div.setAttribute('id', "thoverall" + mergeddata[x]['key']);
         div.setAttribute('class', 'transactiondiv ' + 'transaction' + mergeddata[x]['type']);
+        var date = mergeddata[x]['timestamp'].slice(0, 10).replace(",", " ").replace(" ", "");
         var title = document.createElement('p');
         title.setAttribute('class', 'transactiontitle');
-        title.textContent = mergeddata[x]['type'];
+        title.textContent = "[" + date + "] " + mergeddata[x]['type'];
         var category = document.createElement('span');
         category.textContent = ": " + mergeddata[x]['category'];
+        var plusorminus = "+";
         var value = document.createElement('p');
         value.setAttribute('class', 'transactionvalue');
-        value.textContent = settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
+        value.textContent = plusorminus + settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
         var note = document.createElement('p');
         note.setAttribute('class', 'transactionnote');
         note.textContent = mergeddata[x]['note'];
@@ -124,14 +133,16 @@ async function load_savings() {
         var div = document.createElement('div');
         div.setAttribute('id', "thoverall" + mergeddata[x]['key']);
         div.setAttribute('class', 'transactiondiv ' + 'transaction' + mergeddata[x]['type']);
+        var date = mergeddata[x]['timestamp'].slice(0, 10).replace(",", " ").replace(" ", "");
         var title = document.createElement('p');
         title.setAttribute('class', 'transactiontitle');
-        title.textContent = mergeddata[x]['type'];
+        title.textContent = "[" + date + "] " + mergeddata[x]['type'];
         var category = document.createElement('span');
         category.textContent = ": " + mergeddata[x]['category'];
+        var plusorminus = "+";
         var value = document.createElement('p');
         value.setAttribute('class', 'transactionvalue');
-        value.textContent = settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
+        value.textContent = plusorminus + settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
         var note = document.createElement('p');
         note.setAttribute('class', 'transactionnote');
         note.textContent = mergeddata[x]['note'];
@@ -166,14 +177,16 @@ async function load_expense() {
         var div = document.createElement('div');
         div.setAttribute('id', "thoverall" + mergeddata[x]['key']);
         div.setAttribute('class', 'transactiondiv ' + 'transaction' + mergeddata[x]['type']);
+        var date = mergeddata[x]['timestamp'].slice(0, 10).replace(",", " ").replace(" ", "");
         var title = document.createElement('p');
         title.setAttribute('class', 'transactiontitle');
-        title.textContent = mergeddata[x]['type'];
+        title.textContent = "[" + date + "] " + mergeddata[x]['type'];
         var category = document.createElement('span');
         category.textContent = ": " + mergeddata[x]['category'];
+        var plusorminus = "+";
         var value = document.createElement('p');
         value.setAttribute('class', 'transactionvalue');
-        value.textContent = settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
+        value.textContent = plusorminus + settingsdata['items'][0]['currency'] + mergeddata[x]['value'];
         var note = document.createElement('p');
         note.setAttribute('class', 'transactionnote');
         note.textContent = mergeddata[x]['note'];
