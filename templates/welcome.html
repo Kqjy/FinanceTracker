@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finance Tracker | Welcome</title>
+        {% include "layouts/head.html" %}
+        <link rel="stylesheet" href="/static/css/welcome.css">
+    </head>
+    <body>
+        <div class="welcomemain">
+            <div class="header">
+                <h1>
+                    <img class="headericon" src="/static/images/financetracker.svg" alt="FinTrackerIcon">
+                    Finance Tracker 
+                    <div class="headerversion">Prototype</div>
+                </h1>
+            </div>
+            <div class="setup">
+                <div id="section1">
+                    <h2>Welcome to Finance Tracker!</h2>
+                    <p>Keep track of your expenses, incomes, and savings!</p>
+                    <button onclick="nextsection(1, 2)">Next</button>
+                </div>
+                <div id="section2">
+                    <h2>Enter Capital</h2>
+                    <p>How much do you have currently? (Optional)</p>
+                    <input id="section2text" required type="number" step=".01" value="0.00">
+                    <button id="section2button">Next</button>
+                </div>
+                <div id="section3">
+                    <h2>Enter Display Name</h2>
+                    <p>What is your name?</p>
+                    <input id="section3text" type="text">
+                    <button id="section3button">Next</button>
+                </div>
+                <div id="section4">
+                    <h2>Enter Preferred Currency Sign</h2>
+                    <p>$100.00 or €100.00?</p>
+                    <select id="section4text">
+                        <option value="$">$ (dollar)</option>
+                        <option value="£">£ (pound)</option>
+                        <option value="€">€ (euro)</option>
+                        <option value="¥">¥ (yen/yuan)</option>
+                        <option value="₹">₹ (rupee)</option>
+                        <option value="RM">RM (ringgit)</option>
+                    </select>
+                    <button id="section4button">Next</button>
+                </div>
+                <div id="section5">
+                    <h2>Set up finished!</h2>
+                    <p>Thank you for your patience, now let's get started!</p>
+                    <button onclick="finish()">Finish</button>
+                </div>
+            </div>                     
+        </div>
+        <script src="/static/js/welcome.js"></script>
+        <script type="module" src="/static/js/welcomesetup.js"></script>
+    </body>
+</html>

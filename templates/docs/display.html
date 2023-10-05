@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finance Tracker | Docs</title>
+        {% include "layouts/head.html" %}
+    </head>
+    <body>
+        {% include "layouts/sidepanel.html" %}
+        <div id="main">
+            {% include "layouts/header.html" %}
+            <div>
+                {{template | safe}}
+            </div>
+        </div>
+        <script src="/static/js/main.js"></script>
+        <script src="/static/js/sidepanel.js"></script>
+    </body>
+</html>

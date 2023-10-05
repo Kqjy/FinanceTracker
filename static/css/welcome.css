@@ -1,0 +1,28 @@
+html, body {
+    height: 100%;
+}
+
+.welcomemain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#section2, #section3, #section4, #section5 {
+    display: none;
+}
+
+button {
+    margin: 1rem auto;
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+input, select {
+    font-size: 24px;
+    text-align: center;
+}

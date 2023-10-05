@@ -1,0 +1,211 @@
+html, body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+	word-break: break-word;
+}
+.header h1 {
+    margin: auto;
+    padding: 1.5rem;
+}
+.headericon {
+    width: 40px;
+    vertical-align: bottom;
+    border-radius: 12px;
+}
+.headerversion {
+    vertical-align: middle;
+    color: black;
+    background-color: aquamarine;
+    width: 50px;
+    margin: auto;
+    display: inline;
+    border-radius: 18px;
+    font-size: 12px;
+    padding: 5px;
+}
+.main {
+    width: 650px;
+    margin: auto;
+}
+#openSidepanel {
+    font-size: 28px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+}
+#sidepanel {
+    display: none;
+    background-color: gray;
+    position: fixed;
+    height: 100%;
+}
+.sp-item {
+    border: none;
+    border-radius: 18px;
+    outline: 0;
+    display: block;
+    padding: 22px 10px;
+    margin: 4px 6px;
+    text-align: center;
+}
+.sp-button {
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+}
+.sp-button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.sp-top {
+    margin: 0px;
+    border-radius: 0px;
+    font-size: 24px;
+    width: 100%;
+    font-family: inherit;
+    border-bottom: 3px solid black;
+}
+.headlessui {
+    padding-bottom: 10%;
+    position: relative; 
+    top: 30%;
+}
+.headlessui-back {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    overflow: auto;
+}
+.some-form {
+    width: 650px;
+    background-color: burlywood; 
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: auto;
+}
+.some-form-button {
+    font-family: inherit;
+    display: inline-block;
+    padding: 5px;
+    margin: 8px;
+    background-color: bisque;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.some-form-input {
+    text-align: center;
+    border: 0;
+    outline: solid black 2px;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 5px 1px;
+    display: block;
+    width: 80%;
+    height: 28px;
+    margin: 4px auto 10px auto;
+}
+.some-form-buttons-div {
+    text-align: right;
+}
+.totalbalancelabel {
+    font-size: large;
+}
+.totalbalance {
+    margin: 1rem;
+    font-size: 32px;
+}
+#totalvalue {
+    font-size: 42px;
+    font-weight: bold;
+}
+.balancesection {
+    margin: 2rem auto;
+}
+.dashboardies button {
+    margin: 0.25rem;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 2rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 9rem;
+}
+.transactiondiv {
+    background-color: lightgray;
+    border-radius: 1rem;
+    padding: 5px;
+    margin: 5px auto;
+}
+.transactiontitle {
+    font-size: 16px;
+    margin: 0.5rem auto;
+}
+.transactionvalue {
+    font-size: 18px;
+    font-weight: bold;
+}
+.transactionnote {
+    font-size: 8px;
+}
+.transactionbutton {
+    font-family: inherit;
+    display: inline-block;
+    padding: 4px;
+    background-color: bisque;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.transactionIncome, #addincome {
+    background-color: lightgreen;
+}
+.transactionExpense, #addexpense {
+    background-color: lightgray;
+}
+.transactionSavings, #addsaving {
+    background-color: rgb(220, 185, 100);
+}
+
+.settingspanel input, .settingspanel select {
+    font-size: 24px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    #sidepanel {
+        position: absolute;
+    }
+    .headlessui {
+        left: 0;
+        transform: none;
+    }
+    .some-form {
+        width: 90%;
+    }
+    .headertitle {
+        display: none;
+    }
+    .main {
+        width: 95%;
+    }
+    .settingspanel input, .settingspanel select {
+        width: 90%;
+    }
+}

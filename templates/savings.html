@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finance Tracker | Savings</title>
+        {% include "layouts/head.html" %}
+    </head>
+    <body>
+        {% include "layouts/sidepanel.html" %}
+        <div id="main">
+            <div class="main">
+                {% include "layouts/header.html" %}
+                <h2>Savings</h2>
+                <div class="balancesection">
+                    <p class="totalbalancelabel">Total Savings</p>
+                    <p class="totalbalance"><span id="currencysymbol">{{settings[0]['currency']}}</span> <span id="totalvalue">0.00</span></p>
+                </div>
+                <div class="dashboardies">
+                    <button id="addsaving" onclick="load_form('Saving')">+ Saving &#128176;</button>
+                </div>
+                <div>
+                    <h3>Transaction History</h3>
+                    <div id="transactionsection"></div>
+                </div>
+            </div>
+        </div>
+        <script src="/static/js/main.js"></script>
+        <script type="module" src="/static/js/loaddata.js"></script>
+        <script src="/static/js/sidepanel.js"></script>
+    </body>
+</html>
